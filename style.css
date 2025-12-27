@@ -1,0 +1,264 @@
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    font-family: "Gabarito", sans-serif;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    gap: 15px;
+}
+
+.navbar__s1__title {
+    color: #A435F0;
+}
+
+.navbar__s2 {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+}
+
+.navbar__s2 input {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.navbar__s2 input:focus {
+    outline: none;
+}
+
+.navbar__s3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar__s4 {
+    display: none;
+}
+
+/* ---------- MY LEARNING POPUP ---------- */
+.mylearning {
+    position: relative;
+    cursor: pointer;
+}
+
+.mylearning__popup {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    background-color: white;
+    border: 1px solid black;
+    width: 160px;
+    padding: 15px;
+    display: none;
+}
+
+.mylearning:hover .mylearning__popup {
+    display: block;
+}
+
+/* ---------- CATEGORIES ---------- */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+
+.categories p {
+    background-color: #A435F0;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid #A435F0;
+}
+
+.categories p:hover {
+    background-color: transparent;
+    color: black;
+    transition: 0.3s;
+}
+
+/* ---------- SALE IMAGE ---------- */
+.sale-image {
+    position: relative;
+}
+
+.sale-image img {
+    width: 100%;
+    display: block;
+}
+
+.sale-image__offer {
+    width: 30%;
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    animation: zoom 2s forwards;
+    opacity: 0;
+}
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------- RECOMMENDED ---------- */
+.recommended {
+    padding: 20px;
+}
+
+.recommended__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ---------- COURSE CARD ---------- */
+.course-card {
+    flex: 1 1 22%;
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.course-card h3 {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.course-card p {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+/* ---------- TOPICS ---------- */
+.topics {
+    padding: 20px;
+}
+
+.topics__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.topics__container p {
+    flex: 1 1 25%;
+    border: 2px solid gray;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ---------- POPULAR ---------- */
+.popular {
+    padding: 20px;
+}
+
+.popular__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 40px 60px;
+}
+
+.footer__one {
+    display: flex;
+    gap: 80px;
+}
+
+.footer__one p {
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.footer__two {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 600px) {
+
+    .navbar__s2,
+    .navbar__s3,
+    .categories {
+        display: none;
+    }
+
+    .navbar__s4 {
+        display: block;
+    }
+
+    .course-card {
+        flex: 1 1 45%;
+    }
+
+    .sale-image__offer {
+        width: 80%;
+        left: 10%;
+        top: 50px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer__one {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer__two {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
